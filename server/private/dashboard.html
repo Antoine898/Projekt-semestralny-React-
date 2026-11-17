@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a31">
+  <title>Obserwowane profile | LigaScore</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/dashboard.js" defer></script>
+</head>
+<body>
+  <main class="page dashboard-page">
+    <header class="brand">
+      <span class="brand-mark" aria-hidden="true">L</span>
+      <span>Liga<span class="brand-accent">Score</span></span>
+    </header>
+
+    <section class="card dashboard-card" aria-labelledby="page-title">
+      <p class="eyebrow">TWÓJ PANEL</p>
+      <h1 id="page-title">Obserwowane profile</h1>
+      <p class="intro">Dodawaj ligi, kluby i zawodników do swojej prywatnej listy.</p>
+      <p id="signed-in-user" class="welcome"></p>
+
+      <form id="favorite-form" class="favorite-form">
+        <label for="profile-kind">Rodzaj profilu</label>
+        <select id="profile-kind" name="kind" required>
+          <option value="league">Liga</option>
+          <option value="club">Klub</option>
+          <option value="player">Zawodnik</option>
+        </select>
+        <label for="profile-name">Nazwa</label>
+        <input id="profile-name" name="name" type="text" minlength="2" maxlength="80" autocomplete="off" required>
+        <button id="add-button" class="button" type="submit">Dodaj do obserwowanych</button>
+      </form>
+
+      <p id="favorite-status" class="status" role="status" aria-live="polite"></p>
+      <div class="list-heading">
+        <h2>Moja lista</h2>
+        <span id="favorite-count" class="count"></span>
+      </div>
+      <ul id="favorite-list" class="favorite-list"></ul>
+      <p id="empty-message" class="empty-message" hidden>Nie obserwujesz jeszcze żadnego profilu.</p>
+      <button id="logout-button" class="button button-secondary" type="button">Wyloguj się</button>
+    </section>
+    <footer><a href="/">Strona konta</a> • LigaScore</footer>
+  </main>
+</body>
+</html>
